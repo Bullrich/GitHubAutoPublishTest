@@ -1,5 +1,5 @@
 {
-  "name": "@bullrich/dev.bullrich.printer",
+  "name": "dev.bullrich.printer",
   "version": "0.0.4",
   "displayName": "Printer",
   "description": "It prints stuff",
