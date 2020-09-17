@@ -1,11 +1,10 @@
 name: Create Release
 
 on:
-    push:
-      # Sequence of patterns matched against refs/tags
-      tags:
-        - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+  
 jobs:
   build:
     name: Create Release
@@ -16,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Changelog
-        uses: scottbrenner/generate-changelog-action@master
+        uses: Bullrich/generate-release-changelog@master
         id: Changelog
         env:
           REPO: ${{ github.repository }}
@@ -29,7 +28,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
-            Changes in this release:
+            ## Changelog
             ${{ steps.Changelog.outputs.changelog }}
           draft: false
           prerelease: false
