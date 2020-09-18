@@ -3,14 +3,14 @@ name: NPM Publish
 on:
   push:
     branches:
-      - azure-test
+      - master
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: innerspacetrainings/azure-npm-publish@v0.2
+      - uses: innerspacetrainings/azure-npm-publish@azure-upload
         env:
           REPO: ${{ github.repository }}
         with:
