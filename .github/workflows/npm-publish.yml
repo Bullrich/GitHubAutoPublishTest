@@ -10,12 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: innerspacetrainings/azure-npm-publish@v0.1
         with:
-          node-version: 10
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          registry: https://pkgs.dev.azure.com/javierbullrich0110/GeneralArtifact/_packaging/My-Registry/npm/registry/
-          package: 'Assets/Printer/package.json'
-          check-version: false
+          npmrc-file: ${{ secrets.NPM_FILE }}
+          package-dir: 'Assets/Printer'
