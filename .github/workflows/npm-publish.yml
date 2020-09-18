@@ -3,7 +3,7 @@ name: NPM Publish
 on:
   push:
     branches:
-      - master
+      - azure-test
 
 jobs:
   publish:
@@ -15,7 +15,7 @@ jobs:
           node-version: 10
       - uses: JS-DevTools/npm-publish@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          registry: https://npm.pkg.github.com/Bullrich
+          token: ${{ secrets.NPM_TOKEN }}
+          registry: https://pkgs.dev.azure.com/javierbullrich0110/GeneralArtifact/_packaging/My-Registry/npm/registry/
           package: 'Assets/Printer/package.json'
           check-version: false
