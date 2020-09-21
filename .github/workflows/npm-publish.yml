@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: innerspacetrainings/azure-npm-publish@azure-upload
-        env:
-          REPO: ${{ github.repository }}
+      - uses: innerspacetrainings/azure-npm-publish@master
         with:
           package-dir: 'Assets/Printer'
           npm-email: 'javier.bullrich@innerspace.at'
