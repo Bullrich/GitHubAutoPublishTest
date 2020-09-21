@@ -14,5 +14,9 @@ jobs:
         env:
           REPO: ${{ github.repository }}
         with:
-          npmrc-file: ${{ secrets.NPM_FILE }}
           package-dir: 'Assets/Printer'
+          npm-email: 'javier.bullrich@innerspace.at'
+          organization: 'javierbullrich0110/GeneralArtifact'
+          feed: 'My-Registry'
+          username: 'Javyer'
+          base64-token: ${{ secrets.AZURE_TOKEN }}
