@@ -15,8 +15,9 @@ jobs:
             # a Personal Access Token instead of secrets.GITHUB_TOKEN
             # so that tag pushes trigger repo push events.
             token: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
-      - uses: Klemensas/action-autotag@stable
+      - uses: ButlerLogic/action-autotag@stable
         with:
           GITHUB_TOKEN: "${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}"
           tag_prefix: "v"
-          package_root: "Assets/Printer"
+          strategy: package
+          root: "Assets/Printer"
